@@ -28,5 +28,5 @@ jobs:
         username: biztechsols.co.uk
         password: 7ba35455b2a5
         server-dir: /public_html/laravel-demo/
-        protocol: sftp
+        protocol: ftps
         # rsync-options: --dry-run --archive --verbose --compress --delete-after --human-readable --exclude=.git* --exclude=.git/ --exclude=README.md --exclude=readme.md --exclude=.gitignore
