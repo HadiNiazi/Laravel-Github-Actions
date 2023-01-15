@@ -15,3 +15,4 @@ jobs:
         remote-user: biztechsols.co.uk
         private-ssh-key: 7ba35455b2a5
         destination-path: ~/public_html/laravel-demo/
+        rsync-options: no
