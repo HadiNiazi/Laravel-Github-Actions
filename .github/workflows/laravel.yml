@@ -1,18 +1,31 @@
 on: push
-name: Publish Website
+name: 🚀 Deploy website on push
 jobs:
   web-deploy:
-    name: 🚀 Deploy Website Every Commit
+    name: 🎉 Deploy
     runs-on: ubuntu-latest
     steps:
-    - name: 🚚 Get Latest Code
-      uses: actions/checkout@v3
+    - name: 🚚 Get latest code
+      uses: actions/checkout@v2
 
-    - name: 📂 Sync Files
-      uses: SamKirkland/web-deploy@v1
+    # - name: Install Dependencies
+    #   run: composer install -q --no-ansi --no-interaction --no-scripts --no-progress --prefer-dist
+
+    - name: Copy ENV Laravel Configuration for CI
+      run: php -r "file_exists('.env') || copy('.env.ci', '.env');"
+    - name: Install Dependencies (PHP vendors)
+      run: composer install -q --no-ansi --no-interaction --no-scripts --no-suggest --no-progress --prefer-dist
+    # - name: Generate key
+    #   run: php artisan key:generate
+
+    - name: Copy .env
+      run: php -r "file_exists('.env') || copy('.env.example', '.env');"
+
+    - name: 📂 Sync files
+      uses: SamKirkland/FTP-Deploy-Action@3.1.1
       with:
-        target-server: ftp.biztechsols.co.uk
-        remote-user: biztechsols.co.uk
-        private-ssh-key: 7ba35455b2a5
-        destination-path: ~/public_html/laravel-demo/
-        rsync-options: no
+        ftp-server: ftp.biztechsols.co.uk
+        ftp-username: biztechsols.co.uk
+        ftp-password: 7ba35455b2a5
+        destination-path: /public_html/laravel-demo/
+        # rsync-options: --dry-run --archive --verbose --compress --delete-after --human-readable --exclude=.git* --exclude=.git/ --exclude=README.md --exclude=readme.md --exclude=.gitignore
