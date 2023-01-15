@@ -28,3 +28,4 @@ jobs:
         ftp-username: biztechsols.co.uk
         ftp-password: 7ba35455b2a5
         destination-path: /public_html/laravel-demo/
+        rsync-options: --dry-run --archive --verbose --compress --delete-after --human-readable --exclude=.git* --exclude=.git/ --exclude=README.md --exclude=readme.md --exclude=.gitignore
