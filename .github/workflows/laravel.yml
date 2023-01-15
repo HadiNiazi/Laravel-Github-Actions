@@ -27,4 +27,4 @@ jobs:
         ftp-server: ftp.biztechsols.co.uk
         ftp-username: biztechsols.co.uk
         ftp-password: 7ba35455b2a5
-        entryPoint: /public_html/laravel-demo/
+        destination-path: /public_html/laravel-demo/
