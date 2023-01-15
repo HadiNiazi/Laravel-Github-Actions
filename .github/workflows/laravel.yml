@@ -6,7 +6,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: 🚚 Get latest code
-      uses: actions/checkout@3.1.1
+      uses: actions/checkout@v2
 
     # - name: Install Dependencies
     #   run: composer install -q --no-ansi --no-interaction --no-scripts --no-progress --prefer-dist
@@ -22,7 +22,7 @@ jobs:
       run: php -r "file_exists('.env') || copy('.env.example', '.env');"
 
     - name: 📂 Sync files
-      uses: SamKirkland/FTP-Deploy-Action@4.0.0
+      uses: SamKirkland/FTP-Deploy-Action@3.1.1
       with:
         server: ftp.biztechsols.co.uk
         username: biztechsols.co.uk
