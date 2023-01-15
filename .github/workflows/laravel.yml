@@ -24,8 +24,8 @@ jobs:
     - name: 📂 Sync files
       uses: SamKirkland/FTP-Deploy-Action@4.3.3
       with:
-        ftp-server: ftp.biztechsols.co.uk
-        ftp-username: biztechsols.co.uk
-        ftp-password: 7ba35455b2a5
+        server: ftp.biztechsols.co.uk
+        username: biztechsols.co.uk
+        password: 7ba35455b2a5
         server-dir: /public_html/laravel-demo/
         # rsync-options: --dry-run --archive --verbose --compress --delete-after --human-readable --exclude=.git* --exclude=.git/ --exclude=README.md --exclude=readme.md --exclude=.gitignore
