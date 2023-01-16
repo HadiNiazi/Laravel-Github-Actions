@@ -40,10 +40,15 @@ jobs:
         touch database/database.sqlite
 
 
-    - name: Create Database
-      run: |
-        mkdir -p database
-        touch database/database.mysql
+    # - name: Create Database
+    #   run: |
+    #     mkdir -p database
+    #     touch database/database.mysql
+
+
+      env:
+        DB_CONNECTION: sqlite
+        DB_DATABASE: database/database.sqlite
 
 
     - name: 📂 Sync files
