@@ -14,9 +14,9 @@ jobs:
     - name: Copy .env
       run: php -r "file_exists('.env') || copy('.env.example', '.env');"
 
-    - name: Install Npm
-      run: |
-      npm install
+    - name: npm install and build webpack
+        run: |
+          npm install
 
 
     - name: 📂 Sync files
