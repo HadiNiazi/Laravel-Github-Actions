@@ -20,21 +20,11 @@ jobs:
     #   with:
     #     php-version: '7.0'
 
-    - name: Node.js Setup
-      uses: actions/setup-node@v2
-      with:
-        node-version: 16.x
-    - name: Cache node_modules directory
-      uses: actions/cache@v2
-      id: node_modules-cache
-      with:
-        path: node_modules
-        key: ${{ runner.OS }}-build-${{ hashFiles('**/package.json') }}-${{ hashFiles('**/package-lock.json') }}
 
-    # - name: Npm Installation
-    #   run: |
-    #     npm install
-    #     npm run build
+    - name: Npm Installation
+      run: |
+        npm install
+        npm run build
 
 
     - name: 📂 Sync files
