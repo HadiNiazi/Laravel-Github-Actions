@@ -29,10 +29,22 @@ jobs:
     - name: Compile Css and Js Assets
       run: npm run build
 
-    - name: Setup PHP with PECL extension
-      uses: shivammathur/setup-php@v2
-      with:
-        php-version: '8.1'
+    # - name: Setup PHP with PECL extension
+    #   uses: shivammathur/setup-php@v2
+    #   with:
+    #     php-version: '8.1'
+
+    - name: Create Database
+      run: |
+        mkdir -p database
+        touch database/database.sqlite
+
+
+    - name: Create Database
+      run: |
+        mkdir -p database
+        touch database/database.mysql
+
 
     - name: 📂 Sync files
       uses: SamKirkland/FTP-Deploy-Action@4.3.3
