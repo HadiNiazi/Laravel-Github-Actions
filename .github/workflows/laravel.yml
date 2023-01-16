@@ -15,15 +15,15 @@ jobs:
       run: php -r "file_exists('.env') || copy('.env.example', '.env');"
 
     # above tut recorded
-    # - name: Setup PHP with PECL extension
-    #   uses: shivammathur/setup-php@v2
-    #   with:
-    #     php-version: '8.0'
+    - name: Setup PHP with PECL extension
+      uses: shivammathur/setup-php@v2
+      with:
+        php-version: '8.0'
 
-    - name: Npm Installation
-      run: |
-        npm install
-        npm run build
+    # - name: Npm Installation
+    #   run: |
+    #     npm install
+    #     npm run build
 
 
     - name: 📂 Sync files
