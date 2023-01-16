@@ -15,10 +15,11 @@ jobs:
       run: php -r "file_exists('.env') || copy('.env.example', '.env');"
 
 
-    - name: Setup PHP
-        uses: shivammathur/setup-php@master
-        with:
-          php-version: '8.1'
+    - name: Setup PHP with PECL extension
+      uses: shivammathur/setup-php@v2
+      with:
+        php-version: '8.2'
+        extensions: imagick, swoole
 
     # - name: Set up Node
     #   uses: actions/setup-node@v1
