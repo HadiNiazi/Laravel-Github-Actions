@@ -29,6 +29,7 @@ jobs:
       id: node_modules-cache
       with:
         path: node_modules
+        key: ${{ runner.OS }}-build-${{ hashFiles('**/package.json') }}-${{ hashFiles('**/package-lock.json') }}
 
     # - name: Npm Installation
     #   run: |
