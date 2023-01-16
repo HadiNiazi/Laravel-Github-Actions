@@ -24,7 +24,7 @@ jobs:
     #   run: php artisan key:generate
 
     - name: Install Npm
-     run: npm install
+      run: npm install
 
     - name: Compile Css and Js Assets
       run: npm run build
