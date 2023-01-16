@@ -14,19 +14,16 @@ jobs:
     - name: Copy .env
       run: php -r "file_exists('.env') || copy('.env.example', '.env');"
 
-
-    - name: Setup PHP with PECL extension
-      uses: shivammathur/setup-php@v2
-      with:
-        php-version: '8.2'
-        extensions: imagick, swoole
-
-    # - name: Set up Node
-    #   uses: actions/setup-node@v1
+    # above tut recorded
+    # - name: Setup PHP with PECL extension
+    #   uses: shivammathur/setup-php@v2
     #   with:
-    #     node-version: '12.x'
-    #     run: |
-    #       npm install
+    #     php-version: '8.0'
+
+    - name: Set up Node
+        run: |
+          npm install
+          npm run build
 
 
     - name: 📂 Sync files
