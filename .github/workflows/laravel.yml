@@ -15,7 +15,7 @@ jobs:
       run: php -r "file_exists('.env') || copy('.env.example', '.env');"
 
     - name: Install Npm
-      run: npm:install
+      run: npm install
 
 
     - name: 📂 Sync files
