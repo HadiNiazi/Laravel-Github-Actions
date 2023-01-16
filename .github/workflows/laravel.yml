@@ -21,10 +21,10 @@ jobs:
     #     php-version: '7.0'
 
 
-    - name: Npm Installation
-      run: |
-        npm install
-        npm run build
+    # - name: Npm Installation
+    #   run: |
+    #     npm install
+    #     npm run build
 
 
     - name: 📂 Sync files
