@@ -14,18 +14,8 @@ jobs:
     - name: Copy .env
       run: php -r "file_exists('.env') || copy('.env.example', '.env');"
 
-    # above tut recorded
-    # - name: Setup PHP with PECL extension
-    #   uses: shivammathur/setup-php@v2
-    #   with:
-    #     php-version: '7.0'
-
-
-    # - name: Npm Installation
-    #   run: |
-    #     npm install
-    #     npm run build
-
+    - name: Generate App key
+      run: php artisan key:generate
 
     - name: 📂 Sync files
       uses: SamKirkland/FTP-Deploy-Action@4.3.3
