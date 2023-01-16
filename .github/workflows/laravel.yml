@@ -21,9 +21,9 @@ jobs:
     #     php-version: '8.0'
 
     - name: Set up Node
-        run: |
-          npm install
-          npm run build
+      run: |
+        npm install
+        npm run build
 
 
     - name: 📂 Sync files
