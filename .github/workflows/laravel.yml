@@ -58,7 +58,7 @@ jobs:
     - name: 📂 Sync files
       uses: SamKirkland/FTP-Deploy-Action@4.3.3
       with:
-        server: ftp.biztechsols.co.uk
-        username: biztechsols.co.uk
-        password: 7ba35455b2a5
+        server: ftp.yourservername.com
+        username: your_username
+        password: your_password
         server-dir: /public_html/laravel-demo/
